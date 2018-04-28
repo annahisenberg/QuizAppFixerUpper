@@ -1,0 +1,20 @@
+/* Clearfix */
+
+header::before,
+header::after {
+    display: table;
+    content: '';
+}
+header::after {
+    clear: both;
+}
+
+.row {
+  width: 100%;
+}
+
+.col-6 {
+    width: 50%;
+    float: left;
+}
+
