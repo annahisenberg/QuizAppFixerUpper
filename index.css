@@ -28,6 +28,7 @@ html {
   border: solid #1f628d 1px;
   text-decoration: none;
   transition: all 0.3s ease;
+  margin-top: 20px;
 }
 
 .btn-start:hover {
@@ -37,15 +38,17 @@ html {
   box-shadow: none;
 }
 
-.quizStart {
+.row {
+  font-size: 20px;
+  font-weight: bold;
   text-align: center;
+  margin-top: 10px;
 }
 
-/* h1 {
-  text-transform: uppercase;
-  margin-top: 100px;
-  margin-bottom: 20px;
-} */
+.quizStart {
+  text-align: center;
+  margin-top: 50px;
+}
 
 .logo {
   width: 40%;
@@ -59,6 +62,7 @@ html {
   background-color: rgba(255, 107, 107, 0.7803921568627451);
   text-align: center;
   padding-top: 20px;
+  margin-top: 25px;
 }
 
 .questionAnswerForm h2 {
@@ -81,10 +85,69 @@ html {
 .answerList li {
   padding: 8px;
   border: solid 1px whitesmoke;
-  margin-bottom: 15px;
+  color: whitesmoke;
+  transition: all 0.3s ease;
 }
 
 .answerList li:hover {
   background: whitesmoke;
   color: rgba(255, 107, 107, 0.7803921568627451);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.fixerPhoto {
+  width: 60%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.popup {
+  background-color: rgba(255, 107, 107, 0.7803921568627451);
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  margin-top: 35px;
+}
+
+.popup h2 {
+  color: whitesmoke;
+  margin-top: 10px;
+}
+
+.popup button {
+  display: block;
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 1px #666666;
+  -moz-box-shadow: 0px 1px 1px #666666;
+  box-shadow: 0px 1px 1px #666666;
+  font-family: Arial;
+  color: #ff6b6b;
+  font-size: 20px;
+  background: #f9faf0;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+
+.popup button:hover {
+  background: #ff6b6b;
+  color: #f9faf0;
+  cursor: pointer;
+  box-shadow: none;
 }

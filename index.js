@@ -7,17 +7,19 @@ jQuery(function ($) {
 
   let displayAnswers = [];
   let score = 0;
-  let randomQuestion;
+  let currentQuestion = 0;
   let answers;
 
   // It's only selecting the score tag 
   let scoreDisplay = $('.score');
 
+  $('.col-6').hide();
+  $('.popup').hide();
 
   function startQuiz() {
 
     $('.btn-start').on('click', function () {
-
+      currentQuestion = 0;
       displayQuestionsAndAnswers();
       $('.answerList').append(displayAnswers);
 
@@ -26,54 +28,62 @@ jQuery(function ($) {
         // Adds event listener after loading li's
         $('.answerList').on('click', ` #${i}`, function (event) {
 
-          if ($(event.target).text() === STORE[randomQuestion].correctAnswer) {
+
+          if ($(event.target).text() === STORE[currentQuestion].correctAnswer) {
+
             score++;
             scoreDisplay.text(score);
-            alert('You are correct!');
-            $('.answerList').empty();
-            displayQuestionsAndAnswers();
-            $('.answerList').append(displayAnswers);
-            // WORK AFTER HERE
+            $('.questionAnswerForm').hide(); // style="display: none"
+            $('.popup').show();
+            $('.fixerPhoto').attr('src', STORE[currentQuestion].icon);
 
-          } else {
-            // $('.questionAnswerForm').remove();
-            $('.answerList').empty();
-            displayQuestionsAndAnswers();
-            $('.answerList').append(displayAnswers);
+            $('.popup button').on('click', function () {
+              $('.popup').hide();
+              displayQuestionsAndAnswers();
+              $('.questionAnswerForm').show();
+              $('.answerList').html(displayAnswers);
+            });
+            // WORK AFTER HERE
+            currentQuestion += 1;
+            return
           }
 
+          currentQuestion += 1;
+          $('.answerList').empty();
+          displayQuestionsAndAnswers();
+          $('.answerList').append(displayAnswers);
+
         });
-
       }
-
-
     });
   }
 
   function displayQuestionsAndAnswers() {
-    randomQuestion = Math.floor(Math.random() * Math.floor(STORE.length));
-    answers = STORE[randomQuestion].answers;
+
+    answers = STORE[currentQuestion].answers;
 
     $('.quizStart').remove();
+    $('.col-6').show();
 
     //Setting questionAnswerForm display to active so that we can see it (because before it was set to display: none)
     $('.questionAnswerForm').addClass('active');
 
     // Question
-    $('.questionAnswerForm h2').replaceWith(`<h2>${STORE[randomQuestion].question}</h2>`);
+    $('.questionAnswerForm h2').replaceWith(`<h2>${STORE[currentQuestion].question}</h2>`);
     // Answers
     displayAnswers = [];
     for (let i = 0; i < answers.length; i++) {
-      displayAnswers.push(`<li id=${i}><a>${answers[i]}</a></li>`)
+      displayAnswers.push(`<li id=${i}><a>${answers[i]}</a></li>`);
     }
-    // console.log(displayAnswers);
-    console.log(displayAnswers);
 
   }
 
 
+
   startQuiz();
 
+
+  //When clicking on wrong answer, show another box with a picture and say "Wrong!"
 
 
 });

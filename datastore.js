@@ -7,7 +7,7 @@ const STORE = [{
       'Waco, TX'
     ],
     correctAnswer: 'Waco, TX',
-    icon: 'https://imgur.com/a/icBTO4G',
+    icon: 'https://i.imgur.com/lNujJ6m.jpg',
     alt: 'Chip and Joanna Picture'
   },
   {
@@ -19,7 +19,7 @@ const STORE = [{
       '5'
     ],
     correctAnswer: '4, with another on the way',
-    icon: 'https://imgur.com/a/beGqFyV',
+    icon: 'https://i.imgur.com/WAFiAY2.jpg',
     alt: 'Chip and Joanna with family'
   },
   {
@@ -31,7 +31,7 @@ const STORE = [{
       'Texas'
     ],
     correctAnswer: 'Kansas',
-    icon: 'https://imgur.com/a/w9Q8ZKK',
+    icon: 'https://i.imgur.com/prEvLvo.jpg',
     alt: 'A single golden ear of wheat waving in the wind against a bright sky'
   },
   {
@@ -43,7 +43,7 @@ const STORE = [{
       'Mississippi'
     ],
     correctAnswer: 'New Mexico',
-    icon: 'https://imgur.com/a/axUxgjZ',
+    icon: 'https://i.imgur.com/uZqRw3G.jpg',
     alt: 'Cacti'
   },
   {
@@ -55,7 +55,7 @@ const STORE = [{
       'Texas State University'
     ],
     correctAnswer: 'Baylor',
-    icon: 'https://imgur.com/a/37BXuAu',
+    icon: 'https://i.imgur.com/vFVAFD3.png',
     alt: 'Baylor University main building'
   },
   {
@@ -67,7 +67,7 @@ const STORE = [{
       'Hydrangea'
     ],
     correctAnswer: 'Magnolia',
-    icon: 'https://imgur.com/a/XEsYQVo',
+    icon: 'https://i.imgur.com/6T17GyB.png',
     alt: 'Magnolia store'
   },
   {
@@ -79,7 +79,7 @@ const STORE = [{
       'On the first season of Fixer Upper'
     ],
     correctAnswer: 'During college',
-    icon: 'https://imgur.com/a/2PLyjmy',
+    icon: 'https://i.imgur.com/nVC4mwy.jpg',
     alt: 'Old house that needs to be fixed up'
   },
   {
@@ -91,7 +91,7 @@ const STORE = [{
       'Cedar paneling'
     ],
     correctAnswer: 'Shiplap',
-    icon: 'https://imgur.com/a/bB0r3sb',
+    icon: 'https://i.imgur.com/3ljnqcP.jpg',
     alt: 'Little sitting area with white shiplap on walls'
   },
   {
@@ -103,7 +103,7 @@ const STORE = [{
       'Joanna\'s mom called HGTV and told them about Chip and Joanna'
     ],
     correctAnswer: 'HGTV approached them after they saw pictures of a recent flip house Chip and Joanna did',
-    icon: 'https://imgur.com/a/tfyV0rI',
+    icon: 'https://i.imgur.com/FBCo17g.jpg',
     alt: 'Chip and Joanna posing for Fixer Upper'
   },
   {
@@ -115,7 +115,7 @@ const STORE = [{
       'Mid-century'
     ],
     correctAnswer: 'French Country',
-    icon: 'https://imgur.com/a/dhzhCjl',
+    icon: 'https://i.imgur.com/b2br6Ix.jpg',
     alt: 'French country style house from Fixer Upper'
   }
 ];
