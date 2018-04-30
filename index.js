@@ -7,9 +7,10 @@ jQuery(function ($) {
   //declaring variables
   let displayAnswers = [];
   let score = 0;
-  let currentQuestion = 0;
-  let answers;
   let scoreDisplay = $('.score');
+  let currentQuestion = 0;
+  let questionDisplay = $('.questionNumber');
+  let answers;
 
   //Hiding the popup container and the question and score keeper
   $('.col-6').hide();
@@ -18,7 +19,7 @@ jQuery(function ($) {
 
   //Starting function startQuiz
   function startQuiz() {
-
+    questionDisplay.text(1);
     //Clicking on the start button does this
     $('.btn-start').on('click', function () {
       currentQuestion = 0;
@@ -61,11 +62,13 @@ jQuery(function ($) {
 
             //Increment the question
             currentQuestion += 1;
+            questionDisplay.text(currentQuestion);
             return
           }
 
           //If the answer clicked is the wrong answer, increment the current question
           currentQuestion += 1;
+          questionDisplay.text(currentQuestion);
           //Empty the answerList ul
           $('.answerList').empty();
           //Call the displayQuestionsAndAnswers function

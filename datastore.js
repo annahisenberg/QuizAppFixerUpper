@@ -22,30 +22,30 @@ const STORE = [{
     icon: 'https://i.imgur.com/WAFiAY2.jpg',
     alt: 'Chip and Joanna with family'
   },
-  {
-    question: 'Where was Joanna born?',
-    answers: [
-      'Kansas',
-      'Kentucky',
-      'Arkansas',
-      'Texas'
-    ],
-    correctAnswer: 'Kansas',
-    icon: 'https://i.imgur.com/prEvLvo.jpg',
-    alt: 'A single golden ear of wheat waving in the wind against a bright sky'
-  },
-  {
-    question: 'Where was Chip born?',
-    answers: [
-      'Oklahoma',
-      'Missouri',
-      'New Mexico',
-      'Mississippi'
-    ],
-    correctAnswer: 'New Mexico',
-    icon: 'https://i.imgur.com/uZqRw3G.jpg',
-    alt: 'Cacti'
-  },
+  // {
+  //   question: 'Where was Joanna born?',
+  //   answers: [
+  //     'Kansas',
+  //     'Kentucky',
+  //     'Arkansas',
+  //     'Texas'
+  //   ],
+  //   correctAnswer: 'Kansas',
+  //   icon: 'https://i.imgur.com/prEvLvo.jpg',
+  //   alt: 'A single golden ear of wheat waving in the wind against a bright sky'
+  // },
+  // {
+  //   question: 'Where was Chip born?',
+  //   answers: [
+  //     'Oklahoma',
+  //     'Missouri',
+  //     'New Mexico',
+  //     'Mississippi'
+  //   ],
+  //   correctAnswer: 'New Mexico',
+  //   icon: 'https://i.imgur.com/uZqRw3G.jpg',
+  //   alt: 'Cacti'
+  // },
   {
     question: 'What university did Chip and Joanna both attend?',
     answers: [
