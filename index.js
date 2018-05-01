@@ -94,10 +94,9 @@ jQuery(function ($) {
         if ($(event.target).text() !== STORE[currentQuestion].correctAnswer) {
           hideAnswersShowFeedback();
           $('.wrong-feedback').show();
+          $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: ${STORE[currentQuestion].correctAnswer}`);
           $('.fixerPhoto').attr('src', STORE[currentQuestion].icon);
         }
-        // displayQuestions();
-        // retrieveAndDisplayAnswers();
       });
     }
   }
