@@ -14,42 +14,46 @@
 <body>
 
   <header role="banner">
-    <div class="image">
+    <section role="region" class="image">
       <a href="index.html">
         <img class="logo" src="http://itv-america.com/wp-content/uploads/2017/07/fixer-upper-logo.png" alt="fixer upper logo" />
       </a>
-    </div>
-    <div class="container">
+    </section>
+    <section role="region" class="container">
       <ul class="row" id="questionscore">
         <li class="col-6">Question:
           <span class="questionNumber">0</span>/5</li>
         <li class="col-6">Score:
           <span class="score">0</span>/5</li>
       </ul>
-    </div>
+    </section>
   </header>
 
   <main role="main">
-    <div class="quizStart">
+    <section role="region" class="quizStart">
       <h1>How much do you really know about Fixer Upper?</h1>
       <button type="button" class="btn-start">Start the quiz!</button>
-    </div>
-    <div class="questionAnswerForm">
+    </section>
+    <section role="region" class="questionAnswerForm">
       <h2></h2>
       <ul class="answerList">
       </ul>
-    </div>
-    <div class="container feedback">
+    </section>
+    <section role="region" class="correct-feedback">
       <h2 class="rightwrong">Correct!</h2>
       <img class="fixerPhoto" src="https://i.imgur.com/WAFiAY2.jpg">
-      <button>Next</button>
-    </div>
-    <div class="end-quiz">
+      <button class="next-button">Next</button>
+    </section>
+    <section role="region" class="wrong-feedback">
+      <h2 class="rightwrong">Uh oh! That was the wrong answer. </h2>
+      <button class="next-button">Next</button>
+    </section>
+    <section role="region" class="end-quiz">
       <h2>Congratulations! You are a Fixer Upper expert! Your score is:
         <span class="final-score"></span>
       </h2>
       <button>Start Over</button>
-    </div>
+    </section>
   </main>
 
 

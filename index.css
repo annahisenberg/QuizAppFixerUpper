@@ -111,7 +111,8 @@ html {
   border: 1px solid #083e44;
 }
 
-.feedback {
+.correct-feedback,
+.wrong-feedback {
   background-color: rgba(255, 107, 107, 0.7803921568627451);
   text-align: center;
   display: inline-block;
@@ -123,12 +124,13 @@ html {
   margin-top: 35px;
 }
 
-.feedback h2 {
+.correct-feedback h2,
+.wrong-feedback h2 {
   color: whitesmoke;
   margin-top: 10px;
 }
 
-.feedback button {
+.next-button {
   display: block;
   -webkit-border-radius: 3;
   -moz-border-radius: 3;
@@ -152,7 +154,7 @@ html {
   position: relative;
 }
 
-.feedback button:hover {
+.next-button:hover {
   background: #083e44;
   color: #ff6b6b;
   cursor: pointer;
@@ -218,7 +220,8 @@ html {
     margin-top: 20px;
     border: 1px solid whitesmoke;
   }
-  .feedback {
+  .correct-feedback,
+  .wrong-feedback {
     width: 50%;
     margin: 0 auto;
     border: 1px solid #083e44;
