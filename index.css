@@ -89,7 +89,7 @@ html {
   display: none;
 }
 
-.answerList li {
+.answerList {
   padding: 8px;
   border: solid 1px whitesmoke;
   color: whitesmoke;
@@ -97,7 +97,16 @@ html {
   list-style: none;
 }
 
-.answerList li:hover {
+.answerList label {
+  display: block;
+  margin: 10px;
+}
+
+.answerList input {
+  visibility: hidden;
+}
+
+.answerList label:hover {
   background: whitesmoke;
   color: rgba(255, 107, 107, 0.7803921568627451);
   cursor: pointer;

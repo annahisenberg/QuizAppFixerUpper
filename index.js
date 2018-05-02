@@ -1,4 +1,4 @@
-jQuery(function ($) {
+$(function ($) {
 
   //declaring global variables
   let displayAnswers = [];
@@ -58,9 +58,8 @@ jQuery(function ($) {
   }
 
   function incrementAndShowScore() {
-    //increment the score
+    //increment and display score
     score++;
-    //Display the score
     scoreDisplay.text(score);
   }
 
@@ -78,13 +77,13 @@ jQuery(function ($) {
       // Adds click listener to the "answerList" ul after loading li's
       $('.answerList').on('click', ` #${i}`, function (event) {
         //if the clicked answer's text = the current question's correct answer,
-        if ($(event.target).text() === STORE[currentQuestion].correctAnswer) {
+        if ($(event.target).val() === STORE[currentQuestion].correctAnswer) {
           incrementAndShowScore();
           hideAnswersShowFeedback();
           $('.correct-feedback').show();
           showFixerPhoto();
         }
-        if ($(event.target).text() !== STORE[currentQuestion].correctAnswer) {
+        if ($(event.target).val() !== STORE[currentQuestion].correctAnswer) {
           hideAnswersShowFeedback();
           $('.wrong-feedback').show();
           $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: "${STORE[currentQuestion].correctAnswer}"`);
@@ -108,9 +107,8 @@ jQuery(function ($) {
     // Iterate through the answers. Put each answer into an 'li' and then pushing them into the displayAnswers array.
     displayAnswers = [];
     for (let i = 0; i < answers.length; i++) {
-      displayAnswers.push(`<li id=${i}><a>${answers[i]}</a></li>`);
+      displayAnswers.push(`<label><input type="radio" value="${answers[i]}" name="answer" id=${i} required>${answers[i]}</label>`);
     }
-    $('.answerList').append(displayAnswers);
     //Display the new answers on the .answerList ul
     $('.answerList').html(displayAnswers);
   }
