@@ -2,23 +2,14 @@ jQuery(function ($) {
 
   //declaring global variables
   let displayAnswers = [];
+  let answers;
   let score = 0;
   let scoreDisplay = $('.score');
   let currentQuestion = 0;
   let questionNumberDisplay = $('.questionNumber');
-  let answers;
 
 
-
-  //Hide the feedback container, the question and score keeper, and the end quiz container
-  function hideSections() {
-    $('.col-6').hide();
-    $('.correct-feedback').hide();
-    $('.wrong-feedback').hide();
-    $('.end-quiz').hide();
-  }
-
-  //Start function startQuiz
+  //this function deals with the start button on the first page
   function startQuiz() {
     //Setting first question to 1
     questionNumberDisplay.text(1);
@@ -29,10 +20,9 @@ jQuery(function ($) {
       $('.quizStart').remove();
       //Showing the questions and answer keeper
       $('.col-6').show();
-      //Calls these functions to get the questions (and display them) and answers (but not display them yet)
+      //Call these functions to get the questions (and display them) and answers (but not display them yet)
       displayQuestions();
       retrieveAndDisplayAnswers();
-      //Appending the answer array to the empty "ul" under the question and displaying the answers
       //Call this function below to set click listeners on the answers
       answersClickListener();
     });
@@ -47,14 +37,13 @@ jQuery(function ($) {
       $('.correct-feedback').hide();
       $('.wrong-feedback').hide();
 
-
       if (currentQuestion >= STORE.length - 1) {
-        if (score >= 3) {
+        if (score > 3) {
           $('.final-score').text(`${score}/${STORE.length}`);
           $('.end-quiz').show();
         } else {
           $('.end-quiz').show();
-          $('.end-quiz h2').text(`Aww, looks like you need to watch more Fixer Upper! Your score is ${score}/${STORE.length}`);
+          $('.end-quiz h2').text(`Aww, looks like you need to watch more Fixer Upper! Your score was only ${score} out of ${STORE.length}. Want to try again?`);
         }
       } else {
         currentQuestion += 1;
@@ -80,6 +69,10 @@ jQuery(function ($) {
     $('.questionAnswerForm').hide();
   }
 
+  function showFixerPhoto() {
+    $('.fixerPhoto').attr('src', STORE[currentQuestion].icon);
+  }
+
   function answersClickListener() {
     for (let i = 0; i < answers.length; i++) {
       // Adds click listener to the "answerList" ul after loading li's
@@ -89,13 +82,13 @@ jQuery(function ($) {
           incrementAndShowScore();
           hideAnswersShowFeedback();
           $('.correct-feedback').show();
-          $('.fixerPhoto').attr('src', STORE[currentQuestion].icon);
+          showFixerPhoto();
         }
         if ($(event.target).text() !== STORE[currentQuestion].correctAnswer) {
           hideAnswersShowFeedback();
           $('.wrong-feedback').show();
-          $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: ${STORE[currentQuestion].correctAnswer}`);
-          $('.fixerPhoto').attr('src', STORE[currentQuestion].icon);
+          $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: "${STORE[currentQuestion].correctAnswer}"`);
+          showFixerPhoto();
         }
       });
     }
@@ -110,9 +103,9 @@ jQuery(function ($) {
 
 
   function retrieveAndDisplayAnswers() {
-    //assigning the answers to the answers variable
+    //assign the answers to the answers variable
     answers = STORE[currentQuestion].answers;
-    // Iterating through the answers. We are putting each answer into an 'li' and then pushing them into the displayAnswers array.
+    // Iterate through the answers. Put each answer into an 'li' and then pushing them into the displayAnswers array.
     displayAnswers = [];
     for (let i = 0; i < answers.length; i++) {
       displayAnswers.push(`<li id=${i}><a>${answers[i]}</a></li>`);
@@ -130,9 +123,8 @@ jQuery(function ($) {
 
 
   function init() {
-    hideSections();
-    nextButtonClickListener();
     startQuiz();
+    nextButtonClickListener();
     startOver();
   }
 

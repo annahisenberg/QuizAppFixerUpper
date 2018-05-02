@@ -86,6 +86,7 @@ html {
 .col-6 {
   list-style: none;
   color: #083e44;
+  display: none;
 }
 
 .answerList li {
@@ -122,6 +123,7 @@ html {
   left: 0;
   right: 0;
   margin-top: 35px;
+  display: none;
 }
 
 .correct-feedback h2,
@@ -173,6 +175,7 @@ html {
   left: 0;
   right: 0;
   margin-top: 35px;
+  display: none;
 }
 
 .end-quiz h2 {
