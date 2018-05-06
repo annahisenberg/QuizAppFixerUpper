@@ -110,7 +110,7 @@ $(function ($) {
       displayAnswers.push(`<label><input type="radio" value="${answers[i]}" name="answer" id=${i} required>${answers[i]}</label>`);
     }
     //Display the new answers on the .answerList ul
-    $('.answerList').html(displayAnswers);
+    $('.answerList').html(displayAnswers.join('') + '<button>Submit</button>');
   }
 
   function startOver() {
@@ -131,3 +131,27 @@ $(function ($) {
   init();
 
 });
+
+//Submit button event listener
+
+// for (let i = 0; i < answers.length; i++) {
+//   // Adds click listener to the "answerList" ul after loading li's
+//   $('.submit-btn').on('submit', `#${i}`, function (event) {
+//     event.preventDefault();
+//     let selected = $('input:checked');
+//     let clickedAnswer = selected.val();
+//     //if the clicked answer's text = the current question's correct answer,
+//     if (clickedAnswer === STORE[currentQuestion].correctAnswer) {
+//       incrementAndShowScore();
+//       hideAnswersShowFeedback();
+//       $('.correct-feedback').show();
+//       showFixerPhoto();
+//     }
+//     if (clickedAnswer !== STORE[currentQuestion].correctAnswer) {
+//       hideAnswersShowFeedback();
+//       $('.wrong-feedback').show();
+//       $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: "${STORE[currentQuestion].correctAnswer}"`);
+//       showFixerPhoto();
+//     }
+//   });
+// }

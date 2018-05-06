@@ -23,7 +23,7 @@ html {
   font-family: Arial;
   color: #f9faf0;
   font-size: 20px;
-  background: #ff6b6b;
+  background: #b53d3f;
   padding: 10px 20px 10px 20px;
   border: solid #083e44 1px;
   text-decoration: none;
@@ -64,7 +64,7 @@ html {
   height: 100%;
   display: none;
   width: 100%;
-  background-color: rgba(255, 107, 107, 0.7803921568627451);
+  background-color: #b53d3f;
   text-align: center;
   padding-top: 20px;
   margin-top: 25px;
@@ -123,7 +123,7 @@ html {
 
 .correct-feedback,
 .wrong-feedback {
-  background-color: rgba(255, 107, 107, 0.7803921568627451);
+  background-color: #b53d3f;
   text-align: center;
   display: inline-block;
   position: absolute;
@@ -175,7 +175,7 @@ html {
 }
 
 .end-quiz {
-  background-color: rgba(255, 107, 107, 0.7803921568627451);
+  background-color: #b53d3f;
   text-align: center;
   display: inline-block;
   position: absolute;
