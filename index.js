@@ -24,7 +24,7 @@ $(function ($) {
       displayQuestions();
       retrieveAndDisplayAnswers();
       //Call this function below to set click listeners on the answers
-      answersClickListener();
+      createSubmitListener();
     });
   }
 
@@ -72,25 +72,24 @@ $(function ($) {
     $('.fixerPhoto').attr('src', STORE[currentQuestion].icon);
   }
 
-  function answersClickListener() {
-    for (let i = 0; i < answers.length; i++) {
-      // Adds click listener to the "answerList" ul after loading li's
-      $('.answerList').on('click', ` #${i}`, function (event) {
-        //if the clicked answer's text = the current question's correct answer,
-        if ($(event.target).val() === STORE[currentQuestion].correctAnswer) {
-          incrementAndShowScore();
-          hideAnswersShowFeedback();
-          $('.correct-feedback').show();
-          showFixerPhoto();
-        }
-        if ($(event.target).val() !== STORE[currentQuestion].correctAnswer) {
-          hideAnswersShowFeedback();
-          $('.wrong-feedback').show();
-          $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: "${STORE[currentQuestion].correctAnswer}"`);
-          showFixerPhoto();
-        }
-      });
-    }
+  function createSubmitListener() {
+    $('.answerList').on('submit', function (event) {
+      event.preventDefault();
+      let selected = $('input:checked');
+      let clickedAnswer = selected.val();
+      //if the clicked answer's text = the current question's correct answer,
+      if (clickedAnswer === STORE[currentQuestion].correctAnswer) {
+        incrementAndShowScore();
+        hideAnswersShowFeedback();
+        $('.correct-feedback').show();
+        showFixerPhoto();
+      } else {
+        hideAnswersShowFeedback();
+        $('.wrong-feedback').show();
+        $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: "${STORE[currentQuestion].correctAnswer}"`);
+        showFixerPhoto();
+      }
+    });
   }
 
   function displayQuestions() {
@@ -107,10 +106,10 @@ $(function ($) {
     // Iterate through the answers. Put each answer into an 'li' and then pushing them into the displayAnswers array.
     displayAnswers = [];
     for (let i = 0; i < answers.length; i++) {
-      displayAnswers.push(`<label><input type="radio" value="${answers[i]}" name="answer" id=${i} required>${answers[i]}</label>`);
+      displayAnswers.push(`<label><input type="radio" value="${answers[i]}" name="answer" required>${answers[i]}</label>`);
     }
     //Display the new answers on the .answerList ul
-    $('.answerList').html(displayAnswers.join('') + '<button>Submit</button>');
+    $('.answerList').html(displayAnswers.join('') + '<button class="submit-btn">Submit</button>');
   }
 
   function startOver() {
@@ -129,29 +128,24 @@ $(function ($) {
 
 
   init();
-
 });
 
-//Submit button event listener
-
-// for (let i = 0; i < answers.length; i++) {
-//   // Adds click listener to the "answerList" ul after loading li's
-//   $('.submit-btn').on('submit', `#${i}`, function (event) {
-//     event.preventDefault();
-//     let selected = $('input:checked');
-//     let clickedAnswer = selected.val();
-//     //if the clicked answer's text = the current question's correct answer,
-//     if (clickedAnswer === STORE[currentQuestion].correctAnswer) {
-//       incrementAndShowScore();
-//       hideAnswersShowFeedback();
-//       $('.correct-feedback').show();
-//       showFixerPhoto();
-//     }
-//     if (clickedAnswer !== STORE[currentQuestion].correctAnswer) {
-//       hideAnswersShowFeedback();
-//       $('.wrong-feedback').show();
-//       $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: "${STORE[currentQuestion].correctAnswer}"`);
-//       showFixerPhoto();
-//     }
-//   });
-// }
+// //Submit button event listener
+// // Adds click listener to the "answerList" ul after loading li's
+// $('.submit-btn').on('submit', `#${i}`, function (event) {
+//   event.preventDefault();
+//   let selected = $('input:checked');
+//   let clickedAnswer = selected.val();
+//   //if the clicked answer's text = the current question's correct answer,
+//   if (clickedAnswer === STORE[currentQuestion].correctAnswer) {
+//     incrementAndShowScore();
+//     hideAnswersShowFeedback();
+//     $('.correct-feedback').show();
+//     showFixerPhoto();
+//   } else {
+//     hideAnswersShowFeedback();
+//     $('.wrong-feedback').show();
+//     $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: "${STORE[currentQuestion].correctAnswer}"`);
+//     showFixerPhoto();
+//   }
+// });
