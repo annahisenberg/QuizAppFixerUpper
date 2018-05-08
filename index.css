@@ -64,7 +64,7 @@ html {
   height: 100%;
   display: none;
   width: 100%;
-  background-color: #b53d3f;
+  background-color: rgba(181, 61, 63, 1);
   text-align: center;
   padding-top: 20px;
   margin-top: 25px;
@@ -102,16 +102,8 @@ html {
   margin: 10px;
 }
 
-.answerList input {
-  visibility: hidden;
-}
-
-.answerList label:focus {
-  background: whitesmoke;
-  color: rgba(255, 107, 107, 0.7803921568627451);
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
+input[type="radio"] {
+  margin-right: 5px;
 }
 
 .answerList label:hover {
@@ -147,6 +139,39 @@ html {
 .wrong-feedback h2 {
   color: whitesmoke;
   margin-top: 10px;
+}
+
+.submit-btn {
+  display: block;
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 1px 1px #666666;
+  -moz-box-shadow: 0px 1px 1px #666666;
+  box-shadow: 0px 1px 1px #666666;
+  font-family: Arial;
+  color: #ff6b6b;
+  font-size: 20px;
+  background: #f9faf0;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 1px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-right: auto;
+  display: block;
+  position: relative;
+}
+
+.submit-btn:hover {
+  background: #083e44;
+  color: #ff6b6b;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+  color: white;
 }
 
 .next-button {

@@ -125,27 +125,5 @@ $(function ($) {
     startOver();
   }
 
-
-
   init();
 });
-
-// //Submit button event listener
-// // Adds click listener to the "answerList" ul after loading li's
-// $('.submit-btn').on('submit', `#${i}`, function (event) {
-//   event.preventDefault();
-//   let selected = $('input:checked');
-//   let clickedAnswer = selected.val();
-//   //if the clicked answer's text = the current question's correct answer,
-//   if (clickedAnswer === STORE[currentQuestion].correctAnswer) {
-//     incrementAndShowScore();
-//     hideAnswersShowFeedback();
-//     $('.correct-feedback').show();
-//     showFixerPhoto();
-//   } else {
-//     hideAnswersShowFeedback();
-//     $('.wrong-feedback').show();
-//     $('.wrong-feedback h2').text(`Uh oh! That wasn't the right answer. The right answer was: "${STORE[currentQuestion].correctAnswer}"`);
-//     showFixerPhoto();
-//   }
-// });
